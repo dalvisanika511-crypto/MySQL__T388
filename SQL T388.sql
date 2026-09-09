@@ -67,3 +67,57 @@ UPDATE employee set Title="Mr" where gender= "Male";
 UPDATE employee set Title="Mrs" where gender= "Female";
 select * from employee;
 update employee set bonus=salary*0.05;
+
+use t388;
+create table Kisan_Info 
+( ID int unique not null,
+Name varchar(50) unique not null,
+Age int check (age>=18),
+Email_id varchar(40) default "dummy@gmail.com"
+);
+desc kisan_info;
+insert into kisan_info values
+(1022, "Sarthak Bhosale", 45, ".");
+select*from kisan_info;
+
+update kisan_info set email_id=default
+where id=1022;
+select*from kisan_info;
+alter table kisan_info modify age int check (age>=0);
+insert into kisan_info values
+(1020, "Ram Bhosale", 12, default);
+select*from kisan_info;
+INSERT INTO kisan_info
+VALUES (1020, "Ram Bhosale", 18, DEFAULT);
+ALTER TABLE kisan_info
+DROP CHECK kisan_info_chk_1;
+alter table kisan_info modify age int check (age>=0);
+insert into kisan_info values
+(1020, "Ram Bhosale", 12, default);
+select*from kisan_info;
+show create table kisan_info;
+ALTER TABLE kisan_info
+DROP CHECK kisan_info_chk_2;
+ALTER TABLE kisan_info
+DROP CHECK kisan_info_chk_3;
+insert into kisan_info values
+(1020, "Ram Bhosale", 12, default);
+select*from kisan_info;
+
+
+select distinct department from employee;
+select distinct gender from employee;
+
+use t388;
+show tables;
+select * from employee;
+USE t388_db;
+
+SHOW TABLES;
+select * from employee;
+SHOW DATABASES;
+USE t388_db;
+SHOW TABLES;
+SELECT * FROM employee;
+
+
